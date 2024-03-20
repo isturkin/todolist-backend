@@ -31,3 +31,4 @@ kafka:
   batchSize: 100_000
   maxInFlightPerConnection: 5
   enableIdempotence: true # to handle specific retry errors
+  schemaRegistryUrl: 'http://localhost:28081'

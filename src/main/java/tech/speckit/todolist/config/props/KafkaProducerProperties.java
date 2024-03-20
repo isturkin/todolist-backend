@@ -23,4 +23,5 @@ public class KafkaProducerProperties {
     private String securityProtocol;
     private String saslMechanism;
     private String saslJaasConfig;
+    private String schemaRegistryUrl;
 }

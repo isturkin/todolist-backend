@@ -1,0 +1,16 @@
+{
+  "type": "record",
+  "name": "TaskInfoEvent",
+  "namespace": "tech.speckit.todolist.avro",
+  "fields": [
+    {
+      "name": "taskId",
+      "type": "string"
+    }
+  ]
+}
+
+{
+  "type": "enum"
+}
+
