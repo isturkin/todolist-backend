@@ -8,5 +8,7 @@ public interface TasksService {
 
     List<TaskDto> findAll();
 
+    TaskDto findById(Long taskId);
+
     void create(TaskDto taskDto);
 }

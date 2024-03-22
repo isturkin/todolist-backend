@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import tech.speckit.todolist.controller.dto.TaskDto;
 import tech.speckit.todolist.domain.exception.ProjectNotFoundException;
+import tech.speckit.todolist.domain.exception.TaskNotFoundException;
 import tech.speckit.todolist.domain.model.ProjectEntity;
 import tech.speckit.todolist.domain.model.TaskEntity;
 import tech.speckit.todolist.domain.model.mapper.TaskMapper;
@@ -29,6 +30,11 @@ public class TasksServiceImpl implements TasksService {
                 .stream()
                 .map(taskMapper::mapToDto)
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public TaskDto findById(Long taskId) {
+        return taskMapper.mapToDto(tasksRepository.findById(taskId).orElseThrow(TaskNotFoundException::new));
     }
 
     @Override

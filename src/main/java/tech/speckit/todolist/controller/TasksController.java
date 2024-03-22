@@ -19,6 +19,11 @@ public class TasksController {
         return tasksService.findAll();
     }
 
+    @GetMapping("/{taskId}")
+    public TaskDto getTaskById(@PathVariable("taskId") Long taskId) {
+        return tasksService.findById(taskId);
+    }
+
     @PostMapping
     public void createTask(@RequestBody TaskDto taskDto) {
         tasksService.create(taskDto);
