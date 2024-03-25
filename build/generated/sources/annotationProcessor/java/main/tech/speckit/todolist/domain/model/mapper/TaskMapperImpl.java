@@ -2,7 +2,7 @@ package tech.speckit.todolist.domain.model.mapper;
 
 import javax.annotation.processing.Generated;
 import org.springframework.stereotype.Component;
-import tech.speckit.todolist.controller.dto.TaskDto;
+import tech.speckit.todolist.domain.service.dto.TaskDto;
 import tech.speckit.todolist.domain.model.ProjectEntity;
 import tech.speckit.todolist.domain.model.TaskEntity;
 import tech.speckit.todolist.domain.model.TaskStatus;

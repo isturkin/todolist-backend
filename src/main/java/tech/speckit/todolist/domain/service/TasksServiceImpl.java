@@ -2,7 +2,7 @@ package tech.speckit.todolist.domain.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import tech.speckit.todolist.controller.dto.TaskDto;
+import tech.speckit.todolist.domain.service.dto.TaskDto;
 import tech.speckit.todolist.domain.exception.ProjectNotFoundException;
 import tech.speckit.todolist.domain.model.ProjectEntity;
 import tech.speckit.todolist.domain.model.TaskEntity;

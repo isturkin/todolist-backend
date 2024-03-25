@@ -2,7 +2,7 @@ package tech.speckit.todolist.domain.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import tech.speckit.todolist.controller.dto.ProjectDto;
+import tech.speckit.todolist.domain.service.dto.ProjectDto;
 import tech.speckit.todolist.domain.model.mapper.ProjectMapper;
 import tech.speckit.todolist.repository.ProjectsRepository;
 

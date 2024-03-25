@@ -1,4 +1,4 @@
-package tech.speckit.todolist.controller.dto;
+package tech.speckit.todolist.domain.service.dto;
 
 import lombok.Getter;
 import lombok.Setter;

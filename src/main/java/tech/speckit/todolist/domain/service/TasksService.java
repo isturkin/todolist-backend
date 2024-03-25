@@ -1,6 +1,6 @@
 package tech.speckit.todolist.domain.service;
 
-import tech.speckit.todolist.controller.dto.TaskDto;
+import tech.speckit.todolist.domain.service.dto.TaskDto;
 
 import java.util.List;
 
