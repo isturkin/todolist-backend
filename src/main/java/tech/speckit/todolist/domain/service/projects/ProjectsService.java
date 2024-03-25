@@ -1,4 +1,4 @@
-package tech.speckit.todolist.domain.service;
+package tech.speckit.todolist.domain.service.projects;
 
 import tech.speckit.todolist.domain.service.dto.ProjectDto;
 

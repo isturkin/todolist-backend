@@ -3,7 +3,7 @@ package tech.speckit.todolist.controller;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import tech.speckit.todolist.domain.service.dto.TaskDto;
-import tech.speckit.todolist.domain.service.TasksService;
+import tech.speckit.todolist.domain.service.tasks.TasksService;
 
 import java.util.List;
 

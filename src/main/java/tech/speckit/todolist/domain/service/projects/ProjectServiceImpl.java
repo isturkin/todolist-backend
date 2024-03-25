@@ -1,4 +1,4 @@
-package tech.speckit.todolist.domain.service;
+package tech.speckit.todolist.domain.service.projects;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
