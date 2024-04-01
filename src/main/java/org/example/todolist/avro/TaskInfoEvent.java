@@ -15,7 +15,7 @@ public class TaskInfoEvent extends org.apache.avro.specific.SpecificRecordBase i
   private static final long serialVersionUID = -5599441023494690190L;
 
 
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"TaskInfoEvent\",\"namespace\":\"tech.speckit.todolist.avro\",\"fields\":[{\"name\":\"taskId\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"TaskInfoEvent\",\"namespace\":\"org.example.todolist.avro\",\"fields\":[{\"name\":\"taskId\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static final SpecificData MODEL$ = new SpecificData();
