@@ -1,7 +1,7 @@
 {
   "type": "record",
   "name": "TaskInfoEvent",
-  "namespace": "tech.speckit.todolist.avro",
+  "namespace": "org.example.todolist.avro",
   "fields": [
     {
       "name": "taskId",
