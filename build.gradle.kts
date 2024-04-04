@@ -10,6 +10,7 @@ repositories {
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("org.springframework.boot:spring-boot-starter-actuator")
 
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.postgresql:postgresql:42.5.4")
@@ -22,6 +23,8 @@ dependencies {
 
     compileOnly("org.projectlombok:lombok")
     compileOnly("org.mapstruct:mapstruct:1.5.3.Final")
+
+    runtimeOnly("io.micrometer:micrometer-registry-prometheus")
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.2")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.9.2")
