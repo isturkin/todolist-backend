@@ -2,6 +2,7 @@ package org.example.todolist.config;
 
 import io.confluent.kafka.serializers.KafkaAvroSerializer;
 import io.confluent.kafka.serializers.KafkaAvroSerializerConfig;
+import io.micrometer.core.instrument.MeterRegistry;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;
 import org.example.todolist.config.props.KafkaProducerProperties;
@@ -9,6 +10,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.core.DefaultKafkaProducerFactory;
 import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.kafka.core.MicrometerProducerListener;
 import org.springframework.kafka.core.ProducerFactory;
 import org.springframework.kafka.support.serializer.JsonSerializer;
 import org.example.todolist.avro.TaskInfoEvent;
@@ -20,7 +22,8 @@ import java.util.Map;
 public class KafkaProducerConfig {
 
     @Bean
-    public ProducerFactory<String, TaskInfoEvent> producerFactory(KafkaProducerProperties kafkaProducerProperties) {
+    public ProducerFactory<String, TaskInfoEvent> producerFactory(KafkaProducerProperties kafkaProducerProperties,
+                                                                  MeterRegistry meterRegistry) {
         Map<String, Object> props = new HashMap<>();
         props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, kafkaProducerProperties.getBootstrapServers());
         props.put(ProducerConfig.CLIENT_ID_CONFIG, kafkaProducerProperties.getClientId());
@@ -34,7 +37,11 @@ public class KafkaProducerConfig {
         props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
         props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, KafkaAvroSerializer.class);
         props.put(KafkaAvroSerializerConfig.SCHEMA_REGISTRY_URL_CONFIG, kafkaProducerProperties.getSchemaRegistryUrl());
-        return new DefaultKafkaProducerFactory<>(props);
+
+        ProducerFactory<String, TaskInfoEvent> producerFactory = new DefaultKafkaProducerFactory<>(props);
+        producerFactory.addListener(new MicrometerProducerListener<>(meterRegistry));
+
+        return producerFactory;
     }
 
     @Bean
