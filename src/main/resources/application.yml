@@ -15,6 +15,12 @@ spring:
   liquibase:
     enabled: true
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
 #logging:
 #  level:
 #    org.apache.kafka: DEBUG
