@@ -20,6 +20,12 @@ management:
     web:
       exposure:
         include: "*"
+  metrics:
+    distribution:
+      percentiles-histogram:
+        http.server.requests: true
+      percentiles:
+        http.client.requests: 0.95, 0.99
 
 eureka:
   client:
@@ -28,12 +34,12 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
 
-#logging:
-#  level:
-#    org.apache.kafka: DEBUG
-#    org.hibernate:
-#      SQL: DEBUG
-#      type.descriptor.sql.BasicBinder: TRACE
+logging:
+  level:
+    org.apache.kafka: DEBUG
+    org.hibernate:
+      SQL: DEBUG
+      type.descriptor.sql.BasicBinder: TRACE
 
 kafka:
   bootstrapServers: localhost:29092
@@ -45,3 +51,8 @@ kafka:
   maxInFlightPerConnection: 5
   enableIdempotence: true # to handle specific retry errors
   schemaRegistryUrl: 'http://localhost:28081'
+
+server:
+  tomcat:
+    threads:
+      max: 100

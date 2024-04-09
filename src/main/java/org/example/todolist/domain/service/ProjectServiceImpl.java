@@ -1,7 +1,9 @@
 package org.example.todolist.domain.service;
 
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.example.todolist.controller.dto.ProjectDto;
+import org.example.todolist.domain.model.ProjectEntity;
 import org.example.todolist.repository.ProjectsRepository;
 import org.springframework.stereotype.Service;
 import org.example.todolist.domain.model.mapper.ProjectMapper;
@@ -21,6 +23,7 @@ public class ProjectServiceImpl implements ProjectsService {
         projectsRepository.save(projectMapper.mapToEntity(projectDto));
     }
 
+    @Transactional
     @Override
     public List<ProjectDto> getProjects() {
         return projectsRepository.findAll()

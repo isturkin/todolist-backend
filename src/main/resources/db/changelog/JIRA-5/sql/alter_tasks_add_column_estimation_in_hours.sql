@@ -1,0 +1,1 @@
+ALTER TABLE tasks ADD COLUMN IF NOT EXISTS estimation_in_hours INT;

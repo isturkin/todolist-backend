@@ -1,5 +1,3 @@
-import org.gradle.internal.impldep.org.bouncycastle.util.encoders.UTF8
-
 plugins {
     id("java")
     id("org.springframework.boot") version "3.2.3"
@@ -40,6 +38,9 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.postgresql:postgresql:42.5.4")
     implementation("org.liquibase:liquibase-core")
+
+    // CACHING
+    implementation("com.github.ben-manes.caffeine:caffeine:3.1.8")
 
     implementation("org.springframework.kafka:spring-kafka")
     implementation("org.apache.avro:avro:1.11.3")

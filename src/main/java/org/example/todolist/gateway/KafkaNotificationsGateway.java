@@ -2,6 +2,7 @@ package org.example.todolist.gateway;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.MDC;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
 import org.example.todolist.avro.TaskInfoEvent;
@@ -20,6 +21,8 @@ public class KafkaNotificationsGateway implements NotificationsGateway {
     @Override
     public void sendTaskInfo(TaskEntity taskEntity) {
         try {
+            log.info("Sending task: {}", MDC.get("correlationId"));
+
             taskInfoProducer.send("common.avro.notifications", String.valueOf(taskEntity.getId()),
                     taskInfoEventMapper.mapToDto(taskEntity));
         } catch (Exception ex) {

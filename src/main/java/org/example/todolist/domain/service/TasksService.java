@@ -11,4 +11,6 @@ public interface TasksService {
     TaskDto findById(Long taskId);
 
     void create(TaskDto taskDto);
+
+    void startWork(Long taskId);
 }

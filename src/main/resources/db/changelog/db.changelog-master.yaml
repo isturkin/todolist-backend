@@ -11,3 +11,6 @@ databaseChangeLog:
   - includeAll:
       relativeToChangelogFile: true
       path: JIRA-4
+  - includeAll:
+      relativeToChangelogFile: true
+      path: JIRA-5

@@ -19,6 +19,8 @@ public class TaskEntity {
     @Enumerated(EnumType.STRING)
     private TaskStatus status;
 
+    private Integer estimationInHours;
+
     @JoinColumn(name = "project_id", referencedColumnName = "id")
     @ManyToOne(optional = false, fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
     private ProjectEntity project;
